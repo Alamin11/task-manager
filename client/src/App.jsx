@@ -14,6 +14,7 @@ import TaskDetails from "./pages/TaskDetails";
 import Tasks from "./pages/Tasks";
 import Users from "./pages/Users";
 import Trash from "./pages/Trash";
+import Sidebar from "./components/Sidebar";
 
 //Layout function
 function Layout() {
@@ -24,7 +25,7 @@ function Layout() {
   return user ? (
     <div className="w-full h-screen flex flex-col md:flex-row">
       <div className="w-1/5 h-screen bg-white sticky top-0 hidden md:block">
-        {/* <Sidebar/> */}
+        <Sidebar />
       </div>
       {/* <MobileSidebar /> */}
       <div className="flex-1 overflow-y-auto">
@@ -40,11 +41,9 @@ function Layout() {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <main className="w-full min-h-screen bg-[#f3f4f6]">
+      <main className=" min-h-screen bg-[#f3f4f6]">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Navigate to="/dashboard" />} />
