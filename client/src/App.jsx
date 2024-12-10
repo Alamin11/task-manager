@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar";
 
 //Layout function
 function Layout() {
-  const user = "";
+  const user = "admin";
 
   const location = useLocation();
 
