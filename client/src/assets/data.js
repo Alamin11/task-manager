@@ -4,7 +4,7 @@ export const summary = {
     {
       _id: "65c5f12ab5204a81bde866a9",
       title: "Test task",
-      date: "2024-02-09T00:00:00.000Z",
+      date: "2024-12-09T00:00:00.000Z",
       priority: "high",
       stage: "todo",
       assets: [
@@ -50,8 +50,8 @@ export const summary = {
     },
     {
       _id: "65c5d547660756f6fd453a7a",
-      title: "Duplicate - Duplicate - Review Code Changes",
-      date: "2024-02-09T00:00:00.000Z",
+      title: "Duplicate - Review Code Changes",
+      date: "2024-12-09T00:00:00.000Z",
       priority: "medium",
       stage: "in progress",
       assets: [],
@@ -110,7 +110,7 @@ export const summary = {
     {
       _id: "65c46026af6ec0118be9407a",
       title: "Website Project Proposal Review",
-      date: "2024-02-07T00:00:00.000Z",
+      date: "2024-12-07T00:00:00.000Z",
       priority: "high",
       stage: "todo",
       assets: [
@@ -193,7 +193,7 @@ export const summary = {
     {
       _id: "65c45fb6af6ec0118be94052",
       title: "Task Manager Youtube Video",
-      date: "2024-02-11T00:00:00.000Z",
+      date: "2024-12-11T00:00:00.000Z",
       priority: "medium",
       stage: "completed",
       assets: [
@@ -241,7 +241,7 @@ export const summary = {
     {
       _id: "65c4586f0548279012f8c256",
       title: "Bug Fixing",
-      date: "2024-02-07T00:00:00.000Z",
+      date: "2024-12-07T00:00:00.000Z",
       priority: "high",
       stage: "todo",
       assets: [
@@ -299,7 +299,7 @@ export const summary = {
     {
       _id: "65c3c457fb9c6768ce4bc31a",
       title: "Duplicate - Website Project Proposal",
-      date: "2024-02-07T17:55:13.218Z",
+      date: "2024-12-07T17:55:13.218Z",
       priority: "high",
       stage: "todo",
       assets: [],
@@ -349,7 +349,7 @@ export const summary = {
     {
       _id: "65c3c439fb9c6768ce4bc308",
       title: "Duplicate - Review Code Changes",
-      date: "2024-02-07T17:55:13.218Z",
+      date: "2024-12-07T17:55:13.218Z",
       priority: "medium",
       stage: "in progress",
       assets: [],
@@ -386,7 +386,7 @@ export const summary = {
     {
       _id: "65c3c21f55ae9b2f7666e86c",
       title: "Duplicate - Website Project Proposal",
-      date: "2024-02-07T17:46:56.040Z",
+      date: "2024-12-07T17:46:56.040Z",
       priority: "normal",
       stage: "todo",
       assets: [],
@@ -436,7 +436,7 @@ export const summary = {
     {
       _id: "65c352b376ed5c48f9440955",
       title: "Review Code Changes",
-      date: "2024-02-05T00:00:00.000Z",
+      date: "2024-12-05T00:00:00.000Z",
       priority: "medium",
       stage: "in progress",
       assets: [],
@@ -473,7 +473,7 @@ export const summary = {
     {
       _id: "65c351b976ed5c48f9440947",
       title: "Website Project Proposal",
-      date: "2024-02-07T00:00:00.000Z",
+      date: "2024-12-07T00:00:00.000Z",
       priority: "high",
       stage: "todo",
       assets: [],
@@ -528,7 +528,7 @@ export const summary = {
       title: "Designer",
       role: "Developer",
       isActive: true,
-      createdAt: "2024-02-09T09:38:07.765Z",
+      createdAt: "2024-12-09T09:38:07.765Z",
     },
     {
       _id: "65c3176a0fd860f958baa099",
@@ -536,7 +536,7 @@ export const summary = {
       title: "Data Analyst",
       role: "Analyst",
       isActive: true,
-      createdAt: "2024-02-07T05:38:50.816Z",
+      createdAt: "2024-12-07T05:38:50.816Z",
     },
     {
       _id: "65c317360fd860f958baa08e",
@@ -544,7 +544,7 @@ export const summary = {
       title: "UX Designer",
       role: "Designer",
       isActive: true,
-      createdAt: "2024-02-07T05:37:58.862Z",
+      createdAt: "2024-12-07T05:37:58.862Z",
     },
     {
       _id: "65c30b96e639681a13def0b5",
@@ -552,14 +552,14 @@ export const summary = {
       title: "Product Manager",
       role: "Manager",
       isActive: true,
-      createdAt: "2024-02-07T04:48:22.519Z",
+      createdAt: "2024-12-07T04:48:22.519Z",
     },
     {
       _id: "65c202d4aa62f32ffd1303cc",
       name: "Codewave Asante",
       title: "Administrator",
       role: "Admin",
-      createdAt: "2024-02-06T09:58:44.794Z",
+      createdAt: "2024-12-06T09:58:44.794Z",
       isActive: true,
     },
   ],
@@ -630,14 +630,14 @@ export const tasks = [
         _id: "65c5f153b5204a81bde866c8",
       },
     ],
-    createdAt: "2024-02-09T09:32:26.574Z",
-    updatedAt: "2024-02-09T09:36:53.339Z",
+    createdAt: "2024-12-09T09:32:26.574Z",
+    updatedAt: "2024-02-19T09:36:53.339Z",
     __v: 1,
   },
   {
     _id: "65c5d547660756f6fd453a7a",
     title: "Duplicate - Duplicate - Review Code Changes",
-    date: "2024-02-09T00:00:00.000Z",
+    date: "2024-12-09T00:00:00.000Z",
     priority: "medium",
     stage: "in progress",
     assets: [],
@@ -660,21 +660,21 @@ export const tasks = [
       {
         type: "started",
         activity: "Project started",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-12-09T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f18bb5204a81bde866d1",
       },
       {
         type: "commented",
         activity: "i like coding!!",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-12-09T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f19eb5204a81bde866dd",
       },
       {
         type: "bug",
         activity: "bug found",
-        date: "2024-02-09T09:16:56.623Z",
+        date: "2024-12-09T09:16:56.623Z",
         by: "65c202d4aa62f32ffd1303cc",
         _id: "65c5f1abb5204a81bde866eb",
       },
@@ -687,8 +687,8 @@ export const tasks = [
         _id: "65c3535476ed5c48f9440973",
       },
     ],
-    createdAt: "2024-02-09T07:33:27.590Z",
-    updatedAt: "2024-02-09T09:36:10.386Z",
+    createdAt: "2024-12-09T07:33:27.590Z",
+    updatedAt: "2024-12-19T09:36:10.386Z",
     __v: 4,
   },
   {

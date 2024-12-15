@@ -73,7 +73,7 @@ const NotificationPanel = () => {
   return (
     <>
       <Popover className="relative">
-        <PopoverButton className="inline-flex items-center outline-none">
+        <Popover.Button className="inline-flex items-center outline-none">
           <div className="w-8 h-8 flex items-center justify-center text-gray-800 relative">
             <IoIosNotificationsOutline className="text-2xl" />
             {data?.length > 0 && (
@@ -82,7 +82,7 @@ const NotificationPanel = () => {
               </span>
             )}
           </div>
-        </PopoverButton>
+        </Popover.Button>
 
         <Transition
           as={Fragment}
@@ -93,7 +93,7 @@ const NotificationPanel = () => {
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 translate-y-1"
         >
-          <PopoverPanel className="absolute -right-16 md:-right-2 z-10 mt-5 flex w-screen max-w-max  px-4">
+          <Popover.Panel className="absolute -right-16 md:-right-2 z-10 mt-5 flex w-screen max-w-max  px-4">
             {({ close }) =>
               data?.length > 0 && (
                 <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
@@ -141,7 +141,7 @@ const NotificationPanel = () => {
                 </div>
               )
             }
-          </PopoverPanel>
+          </Popover.Panel>
         </Transition>
       </Popover>
     </>
