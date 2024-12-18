@@ -5,7 +5,13 @@ import { BsThreeDots } from "react-icons/bs";
 import { HiDuplicate } from "react-icons/hi";
 import { MdAdd, MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { Menu, Transition } from "@headlessui/react";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from "@headlessui/react";
 import AddTask from "./AddTask";
 import AddSubTask from "./AddSubTask";
 import ConfirmatioDialog from "../Dialogs";
@@ -48,9 +54,9 @@ const TaskDialog = ({ task }) => {
     <>
       <div>
         <Menu as="div" className="relative inline-block text-left">
-          <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-600 ">
+          <MenuButton className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-600 ">
             <BsThreeDots />
-          </Menu.Button>
+          </MenuButton>
 
           <Transition
             as={Fragment}
@@ -61,10 +67,10 @@ const TaskDialog = ({ task }) => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute p-4 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+            <MenuItems className="absolute p-4 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
               <div className="px-1 py-1 space-y-2">
                 {items.map((el) => (
-                  <Menu.Item key={el.label}>
+                  <MenuItem key={el.label}>
                     {({ active }) => (
                       <button
                         onClick={el?.onClick}
@@ -76,12 +82,12 @@ const TaskDialog = ({ task }) => {
                         {el.label}
                       </button>
                     )}
-                  </Menu.Item>
+                  </MenuItem>
                 ))}
               </div>
 
               <div className="px-1 py-1">
-                <Menu.Item>
+                <MenuItem>
                   {({ active }) => (
                     <button
                       onClick={() => deleteClicks()}
@@ -96,9 +102,9 @@ const TaskDialog = ({ task }) => {
                       Delete
                     </button>
                   )}
-                </Menu.Item>
+                </MenuItem>
               </div>
-            </Menu.Items>
+            </MenuItems>
           </Transition>
         </Menu>
       </div>

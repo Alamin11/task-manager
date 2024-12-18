@@ -11,6 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center bg-white px-4 py-3 2xl:py-4 sticky z-10 top-0">
+      {/* Left side of the navbar holding search bar */}
       <div className="flex gap-4">
         <button
           onClick={() => dispatch(setOpenSidebar(true))}
@@ -29,6 +30,7 @@ const Navbar = () => {
           />
         </div>
       </div>
+      {/* Right side of the navbar with avatar and notification  */}
 
       <div className="flex gap-2 items-center">
         <NotificationPanel />
