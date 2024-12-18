@@ -1,25 +1,24 @@
-import { useState } from "react";
-import {
-  Navigate,
-  Outlet,
-  replace,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Transition } from "@headlessui/react";
+import clsx from "clsx";
+import { Fragment, useRef } from "react";
+import { IoClose } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+
 import { Toaster } from "sonner";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import TaskDetails from "./pages/TaskDetails";
 import Tasks from "./pages/Tasks";
-import Users from "./pages/Users";
 import Trash from "./pages/Trash";
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
+import Users from "./pages/Users";
+import { setOpenSidebar } from "./redux/slices/authSlice";
 
 //Layout function
 function Layout() {
-  const user = "";
+  const user = useSelector((state) => state.auth);
 
   const location = useLocation();
 
@@ -94,25 +93,23 @@ const MobileSidebar = () => {
 
 function App() {
   return (
-    <>
-      <main className=" min-h-screen bg-[#f3f4f6]">
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Navigate to="/dashboard" />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/tasks" element={<Tasks />} />
-            <Route path="/completed/:status" element={<Tasks />} />
-            <Route path="/in-progress/:status" element={<Tasks />} />
-            <Route path="/todo/:status" element={<Tasks />} />
-            <Route path="/team" element={<Users />} />
-            <Route path="/trashed" element={<Trash />} />
-            <Route path="/task/:id" element={<TaskDetails />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Toaster richColors />
-      </main>
-    </>
+    <main className=" min-h-screen bg-[#f3f4f6]">
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Navigate to="/dashboard" />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/completed/:status" element={<Tasks />} />
+          <Route path="/in-progress/:status" element={<Tasks />} />
+          <Route path="/todo/:status" element={<Tasks />} />
+          <Route path="/team" element={<Users />} />
+          <Route path="/trashed" element={<Trash />} />
+          <Route path="/task/:id" element={<TaskDetails />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Toaster richColors />
+    </main>
   );
 }
 
