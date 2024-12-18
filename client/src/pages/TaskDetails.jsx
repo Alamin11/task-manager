@@ -205,13 +205,13 @@ const TaskDetails = () => {
               <div className="w-full md:w-1/2 space-y-8">
                 <p className="text-lg font-semibold text-center">ASSETS</p>
 
-                <div className="w-full flex flex-col  items-center gap-4">
+                <div className="w-full grid grid-cols-2  items-center gap-4">
                   {task?.assets?.map((el, index) => (
                     <img
                       key={index}
                       src={el}
                       alt={task?.title}
-                      className="w-2/3 rounded h-28 md:h-36 2xl:h-52 cursor-pointer transition-all duration-700 hover:scale-125 hover:z-50"
+                      className="w-full rounded h-28 md:h-36 2xl:h-52 cursor-pointer transition-all duration-700 hover:scale-125 hover:z-50"
                     />
                   ))}
                 </div>
