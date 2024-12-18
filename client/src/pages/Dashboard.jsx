@@ -5,15 +5,15 @@ import {
   MdKeyboardArrowUp,
   MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
-import { LuClipboardPenLine } from "react-icons/lu";
-import { FaNewspaper, FaUsers } from "react-icons/fa";
+import { LiaClipboardListSolid } from "react-icons/lia";
+import { FaNewspaper } from "react-icons/fa";
 import { FaArrowsToDot } from "react-icons/fa6";
 import moment from "moment";
 import { summary } from "../assets/data";
 import clsx from "clsx";
 import { Chart } from "../components/Chart";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
-// import UserInfo from "../components/UserInfo";
+import UserInfo from "../components/UserInfo";
 
 const TaskTable = ({ tasks }) => {
   const ICONS = {
@@ -28,7 +28,7 @@ const TaskTable = ({ tasks }) => {
         <th className="py-2">Task Title</th>
         <th className="py-2">Priority</th>
         <th className="py-2">Team</th>
-        <th className="py-2 hidden md:block">Created At</th>
+        <th className="py-2 hidden md:block">Created at</th>
       </tr>
     </thead>
   );
@@ -167,7 +167,7 @@ const Dashboard = () => {
       _id: "3",
       label: "TASK IN PROGRESS ",
       total: totals["in progress"] || 0,
-      icon: <LuClipboardEdit />,
+      icon: <LiaClipboardListSolid />,
       bg: "bg-[#f59e0b]",
     },
     {

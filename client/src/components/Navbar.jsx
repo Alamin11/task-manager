@@ -18,13 +18,13 @@ const Navbar = () => {
         >
           ☰
         </button>
-        {/* Search box in the left */}
-        <div className="w-64 2xl:w-[400px] flex items-center py-2 px-3 gap-2 rounded-full bg-[#f3f4f6]">
+
+        <div className="w-40 min-[375px]:w-48 md:w-60  2xl:w-[400px] flex items-center py-2 px-3 gap-2 rounded-full bg-[#f3f4f6]">
           <MdOutlineSearch className="text-gray-500 text-xl" />
 
           <input
             type="text"
-            placeholder="Search...."
+            placeholder="Search..."
             className="flex-1 outline-none bg-transparent placeholder:text-gray-500 text-gray-800"
           />
         </div>
