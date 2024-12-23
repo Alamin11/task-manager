@@ -23,7 +23,7 @@ const TaskDialog = ({ task }) => {
 
   const navigate = useNavigate();
 
-  const duplicateHandler = () => {};
+  const duplicateHanlder = () => {};
   const deleteClicks = () => {};
   const deleteHandler = () => {};
 

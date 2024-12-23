@@ -39,12 +39,12 @@ const AddTask = ({ open, setOpen }) => {
     <>
       <ModalWrapper open={open} setOpen={setOpen}>
         <form onSubmit={handleSubmit(submitHandler)}>
-          <DialogTitle
+          <Dialog.Title
             as="h2"
             className="text-base font-bold leading-6 text-gray-900 mb-4"
           >
             {task ? "UPDATE TASK" : "ADD TASK"}
-          </DialogTitle>
+          </Dialog.Title>
 
           <div className="mt-2 flex flex-col gap-6">
             <Textbox
@@ -56,7 +56,7 @@ const AddTask = ({ open, setOpen }) => {
               register={register("title", { required: "Title is required" })}
               error={errors.title ? errors.title.message : ""}
             />
-
+            {/* Pop up all the users from user list */}
             <UserList setTeam={setTeam} team={team} />
 
             <div className="flex gap-4">

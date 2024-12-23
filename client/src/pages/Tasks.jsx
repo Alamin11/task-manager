@@ -12,6 +12,7 @@ import TaskTitle from "../components/TaskTitle";
 import BoardView from "../components/BoardView";
 import { tasks } from "../assets/data";
 import Table from "../components/task/Table";
+import AddTask from "../components/task/AddTask";
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },
   { title: "List View", icon: <FaList /> },
@@ -40,6 +41,7 @@ const Tasks = () => {
         <Title title={status ? `${status} Tasks` : "Tasks"} />
         {!status && (
           <Button
+            onClick={() => setOpen(true)}
             label="Create Task"
             icon={<IoMdAdd className="text-lg" />}
             className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white"
@@ -67,6 +69,7 @@ const Tasks = () => {
             </div>
           )}
         </Tabs>
+        <AddTask open={open} setOpen={setOpen} />
       </div>
     </div>
   );
