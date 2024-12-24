@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 const protectRoute = async (req, res, next) => {
   try {
-    let token = req.cookie.token;
+    let token = req.cookies.token;
     if (token) {
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
       const resp = await UserActivation.findById(decodedToken.userId).select(
@@ -15,6 +15,13 @@ const protectRoute = async (req, res, next) => {
         userId: decodedToken.userId,
       };
       next();
+    } else {
+      return res
+        .status(401)
+        .json({
+          status: false,
+          message: "Not authorized. Try login again check token",
+        });
     }
   } catch (error) {
     console.log(error);

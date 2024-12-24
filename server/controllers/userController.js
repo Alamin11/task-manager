@@ -4,6 +4,7 @@ import Notice from "../models/notification.js";
 
 //register user controller
 export const registerUser = async (req, res) => {
+  console.log(req.body);
   try {
     const { name, email, password, isAdmin, role, title } = req.body;
 
