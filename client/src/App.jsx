@@ -18,10 +18,11 @@ import { setOpenSidebar } from "./redux/slices/authSlice";
 
 //Layout function
 function Layout() {
-  const user = useSelector((state) => state.auth);
-
+  const { user } = useSelector((state) => state.auth);
+  // console.log(user);
   const location = useLocation();
 
+  // if (user == null) navigate("/login");
   return user ? (
     <div className="w-full h-screen flex flex-col md:flex-row">
       <div className="w-1/5 h-screen bg-white sticky top-0 hidden md:block">
@@ -39,7 +40,7 @@ function Layout() {
     <Navigate to="/login" state={{ from: location }} replace />
   );
 }
-
+//Sidebar for small screen
 const MobileSidebar = () => {
   const { isSidebarOpen } = useSelector((state) => state.auth);
   const mobileMenuRef = useRef(null);
@@ -96,7 +97,7 @@ function App() {
     <main className=" min-h-screen bg-[#f3f4f6]">
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Navigate to="/dashboard" />} />
+          <Route index path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/completed/:status" element={<Tasks />} />
