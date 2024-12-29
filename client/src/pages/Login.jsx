@@ -11,7 +11,7 @@ import Loading from "../components/Loader";
 
 const Login = () => {
   const { user } = useSelector((state) => state.auth);
-  console.log(user);
+  // console.log(user);
 
   const {
     register,

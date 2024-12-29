@@ -1,11 +1,14 @@
 import jwt from "jsonwebtoken";
+import User from "../models/user.js";
 
 const protectRoute = async (req, res, next) => {
   try {
     let token = req.cookies.token;
+    console.log(token);
     if (token) {
+      console.log("check");
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-      const resp = await UserActivation.findById(decodedToken.userId).select(
+      const resp = await User.findById(decodedToken.userId).select(
         "isAdmin email"
       );
 
@@ -16,12 +19,10 @@ const protectRoute = async (req, res, next) => {
       };
       next();
     } else {
-      return res
-        .status(401)
-        .json({
-          status: false,
-          message: "Not authorized. Try login again check token",
-        });
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized. Try login again check token",
+      });
     }
   } catch (error) {
     console.log(error);
