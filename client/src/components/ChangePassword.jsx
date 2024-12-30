@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { useChangePasswordMutation } from "../redux/slices/api/userApiSlice";
 import { toast } from "sonner";
 import ModalWrapper from "./ModalWrapper";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogTitle } from "@headlessui/react";
 import Textbox from "./Textbox";
+import Loading from "./Loader";
+import Button from "./Button";
 
 const ChangePassword = ({ open, setOpen }) => {
   const {
@@ -35,13 +37,13 @@ const ChangePassword = ({ open, setOpen }) => {
   return (
     <>
       <ModalWrapper open={open} setOpen={setOpen}>
-        <form onSubmit={handleOnSubmit(handleOnSubmit)} className="">
-          <Dialog.Title
+        <form onSubmit={handleSubmit(handleOnSubmit)} className="">
+          <DialogTitle
             as="h2"
             className="text-base font-bold leading-6 text-gray-900 mb-4"
           >
             Change Password
-          </Dialog.Title>
+          </DialogTitle>
           <div className="mt-2 flex flex-col gap-6">
             <Textbox
               placeholder="New password"
@@ -54,7 +56,38 @@ const ChangePassword = ({ open, setOpen }) => {
               })}
               error={errors.password ? errors.password.message : ""}
             />
+            <Textbox
+              placeholder="Confirm New Password"
+              type="password"
+              name="cpass"
+              label="Confirm New Password"
+              className="w-full rounded"
+              register={register("cpass", {
+                required: "Confirm New Password is required!",
+              })}
+              error={errors.password ? errors.password.message : ""}
+            />
           </div>
+          {isLoading ? (
+            <div className="py-5">
+              <Loading />
+            </div>
+          ) : (
+            <div className="py-3 mt-4 sm:flex sm:flex-row-reverse">
+              <Button
+                type="submit"
+                className="bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto"
+                label="Submit"
+              />
+
+              <Button
+                type="button"
+                className="bg-white px-5 text-sm font-semibold text-gray-900 sm:w-auto"
+                onClick={() => setOpen(false)}
+                label="Cancel"
+              />
+            </div>
+          )}
         </form>
       </ModalWrapper>
     </>

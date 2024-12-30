@@ -14,6 +14,8 @@ import { getInitials } from "../utils";
 import { toast } from "sonner";
 import { useLogoutMutation } from "../redux/slices/api/authApiSlice";
 import { logout } from "../redux/slices/authSlice";
+import ChangePassword from "./ChangePassword";
+import AddUser from "./AddUser";
 
 const UserAvatar = () => {
   const [open, setOpen] = useState(false);
