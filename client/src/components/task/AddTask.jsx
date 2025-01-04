@@ -80,6 +80,7 @@ const AddTask = ({ open, setOpen, task }) => {
 
       setTimeout(() => {
         setOpen(false);
+        window.location.reload();
       }, 500);
     } catch (err) {
       console.log(err);
@@ -203,7 +204,7 @@ const AddTask = ({ open, setOpen, task }) => {
                 </span>
               ) : (
                 <Button
-                  label="Update"
+                  label="Add Task"
                   type="submit"
                   className="bg-blue-600 px-8 text-sm rounded-md font-semibold text-white hover:bg-blue-700  sm:w-auto"
                 />

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import ModalWrapper from "../ModalWrapper";
-import { Dialog, DialogTitle } from "@headlessui/react";
+import { DialogTitle } from "@headlessui/react";
 import Textbox from "../Textbox";
 import Button from "../Button";
 import { useCreateSubTaskMutation } from "../../redux/slices/api/taskApiSlice";
@@ -22,6 +22,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
       toast.success(res.message);
       setTimeout(() => {
         setOpen(false);
+        window.location.reload();
       }, 500);
     } catch (err) {
       console.log(err);
