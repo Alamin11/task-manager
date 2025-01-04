@@ -91,6 +91,7 @@ const AddTask = ({ open, setOpen, task }) => {
     setAssets(e.target.files);
   };
 
+  //Uploading file
   const uploadFile = async (file) => {
     const storage = getStorage(app);
 
@@ -202,15 +203,15 @@ const AddTask = ({ open, setOpen, task }) => {
                 </span>
               ) : (
                 <Button
-                  label="Submit"
+                  label="Update"
                   type="submit"
-                  className="bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto"
+                  className="bg-blue-600 px-8 text-sm rounded-md font-semibold text-white hover:bg-blue-700  sm:w-auto"
                 />
               )}
 
               <Button
                 type="button"
-                className="bg-white px-5 text-sm font-semibold text-gray-900 sm:w-auto"
+                className="bg-white px-5 rounded-md text-sm font-semibold text-gray-900 sm:w-auto"
                 onClick={() => setOpen(false)}
                 label="Cancel"
               />

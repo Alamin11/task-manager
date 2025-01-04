@@ -34,9 +34,9 @@ const Trash = () => {
   const [selected, setSelected] = useState("");
 
   //fetching all task
-  const { data, isLoading } = useGetAllTasksQuery({
+  const { data, isLoading, refetch } = useGetAllTasksQuery({
     strQuery: "",
-    isTrashed: "",
+    isTrashed: "true",
     search: "",
   });
 
@@ -75,6 +75,7 @@ const Trash = () => {
 
       setTimeout(() => {
         setOpenDialog(false);
+        refetch();
         window.location.reload();
       }, 500);
     } catch (err) {
