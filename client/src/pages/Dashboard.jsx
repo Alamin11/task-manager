@@ -56,7 +56,7 @@ const TaskTable = ({ tasks }) => {
         </div>
       </td>
 
-      <td className="py-2">
+      <td className="p-2">
         <div className="flex">
           {task.team.map((m, index) => (
             <div
@@ -80,7 +80,7 @@ const TaskTable = ({ tasks }) => {
   );
   return (
     <>
-      <div className="w-full md:w-2/3 bg-white px-2 md:px-4 pt-4 pb-4 shadow-md rounded">
+      <div className="w-full md:w-full lg:w-2/3 bg-white px-2 md:px-4 pt-4 pb-4 shadow-md rounded">
         <table className="w-full">
           <TableHeader />
           <tbody>
@@ -100,42 +100,47 @@ const UserTable = ({ users }) => {
       <tr className="text-black  text-left">
         <th className="py-2">Full Name</th>
         <th className="py-2">Status</th>
-        <th className="py-2">Created At</th>
+        <th className="py-2 lg:hidden">Joined</th>
       </tr>
     </thead>
   );
 
-  const TableRow = ({ user }) => (
-    <tr className="border-b border-gray-200  text-gray-600 hover:bg-gray-400/10">
-      <td className="py-2">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-violet-700">
-            <span className="text-center">{getInitials(user?.name)}</span>
-          </div>
+  const TableRow = ({ user }) => {
+    // console.log(user);
+    return (
+      <tr className="border-b border-gray-200  text-gray-600 hover:bg-gray-400/10">
+        <td className="py-2">
+          <div className="flex items-center justify-start gap-2">
+            <div className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm bg-violet-700">
+              <span className="text-center">{getInitials(user?.name)}</span>
+            </div>
 
-          <div>
-            <p> {user.name}</p>
-            <span className="text-xs text-black">{user?.role}</span>
+            <div>
+              <p className="lg:text-sm"> {user?.name}</p>
+              <span className="text-xs text-black">{user?.role}</span>
+            </div>
           </div>
-        </div>
-      </td>
+        </td>
 
-      <td>
-        <p
-          className={clsx(
-            "w-fit px-3 py-1 rounded-full text-sm",
-            user?.isActive ? "bg-blue-200" : "bg-yellow-100"
-          )}
-        >
-          {user?.isActive ? "Active" : "Disabled"}
-        </p>
-      </td>
-      <td className="py-2 text-sm">{moment(user?.createdAt).fromNow()}</td>
-    </tr>
-  );
+        <td>
+          <p
+            className={clsx(
+              "w-fit px-2 py-1 rounded-full text-sm lg:text-xs",
+              user?.isActive ? "bg-blue-200" : "bg-yellow-100"
+            )}
+          >
+            {user?.isActive ? "Active" : "Disabled"}
+          </p>
+        </td>
+        <td className="py-2 text-sm lg:hidden">
+          {moment(user?.createdAt).fromNow()}
+        </td>
+      </tr>
+    );
+  };
 
   return (
-    <div className="w-full md:w-1/3 bg-white h-fit px-2 md:px-6 py-4 shadow-md rounded">
+    <div className="w-full lg:w-1/3 bg-white h-fit px-2 md:px-6 py-4 shadow-md rounded">
       <table className="w-full mb-5">
         <TableHeader />
         <tbody>
@@ -191,10 +196,10 @@ const Dashboard = () => {
   const Card = ({ label, count, bg, icon }) => {
     return (
       <div className="w-full h-32 bg-white p-5 shadow-md rounded-md flex items-center justify-between">
-        <div className="h-full flex flex-1 flex-col justify-between">
+        <div className="h-full flex flex-1 flex-col justify-center ">
           <p className="text-base text-gray-600">{label}</p>
           <span className="text-2xl font-semibold">{count}</span>
-          <span className="text-sm text-gray-400">{"110 last month"}</span>
+          {/* <span className="text-sm text-gray-400">{"110 last month"}</span> */}
         </div>
 
         <div
@@ -208,22 +213,23 @@ const Dashboard = () => {
       </div>
     );
   };
+  // console.log(data);
   return (
     <div classNamee="h-full py-4">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {stats.map(({ icon, bg, label, total }, index) => (
           <Card key={index} icon={icon} bg={bg} label={label} count={total} />
         ))}
       </div>
 
       <div className="w-full bg-white my-16 p-4 rounded shadow-sm">
-        <h4 className="text-xl text-gray-600 font-semibold">
+        <h4 className="text-xl text-gray-600 font-semibold text-center pb-4">
           Chart by Priority
         </h4>
         <Chart data={data?.graphData} />
       </div>
 
-      <div className="w-full flex flex-col md:flex-row gap-4 2xl:gap-10 py-8">
+      <div className="w-full flex flex-col lg:flex-row gap-4 2xl:gap-10 py-8">
         {/* /left */}
 
         <TaskTable tasks={data?.last10Task} />
