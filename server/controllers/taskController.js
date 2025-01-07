@@ -130,7 +130,7 @@ export const postTaskActivity = async (req, res) => {
 export const dashboardStatistics = async (req, res) => {
   try {
     const { userId, isAdmin } = req.user;
-
+    // console.log(isAdmin);
     const allTasks = isAdmin
       ? await Task.find({
           isTrashed: false,
@@ -198,7 +198,7 @@ export const dashboardStatistics = async (req, res) => {
       ...summary,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -228,7 +228,7 @@ export const getTasks = async (req, res) => {
       tasks,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -253,7 +253,7 @@ export const getTask = async (req, res) => {
       task,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -281,7 +281,7 @@ export const createSubTask = async (req, res) => {
       .status(200)
       .json({ status: true, message: "SubTask added successfully." });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -307,7 +307,7 @@ export const updateTask = async (req, res) => {
       .status(200)
       .json({ status: true, message: "Task duplicated successfully." });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -328,7 +328,7 @@ export const trashTask = async (req, res) => {
       message: `Task trashed successfully.`,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -360,7 +360,7 @@ export const deleteRestoreTask = async (req, res) => {
       message: `Operation performed successfully.`,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
