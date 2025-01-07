@@ -76,7 +76,7 @@ export const loginUser = async (req, res) => {
         .json({ status: false, message: "Invalid email or password" });
     }
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -91,7 +91,7 @@ export const logoutUser = async (req, res) => {
 
     res.status(200).json({ message: "Logout successful" });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -103,7 +103,7 @@ export const getTeamList = async (req, res) => {
 
     res.status(200).json(users);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -120,7 +120,7 @@ export const getNotificationsList = async (req, res) => {
 
     res.status(201).json(notice);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -158,7 +158,7 @@ export const updateUserProfile = async (req, res) => {
       res.status(404).json({ status: false, message: "User not found" });
     }
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -186,7 +186,7 @@ export const markNotificationRead = async (req, res) => {
 
     res.status(201).json({ status: true, message: "Done" });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -213,7 +213,7 @@ export const changeUserPassword = async (req, res) => {
       res.status(404).json({ status: false, message: "User not found" });
     }
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -241,7 +241,7 @@ export const activateUserProfile = async (req, res) => {
       res.status(404).json({ status: false, message: "User not found" });
     }
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
@@ -256,7 +256,7 @@ export const deleteUserProfile = async (req, res) => {
       .status(200)
       .json({ status: true, message: "User deleted successfully" });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return res.status(400).json({ status: false, message: error.message });
   }
 };
