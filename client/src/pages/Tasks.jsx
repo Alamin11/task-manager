@@ -3,7 +3,7 @@ import { FaList } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import { MdGridView } from "react-icons/md";
 import { useParams } from "react-router-dom";
-import { tasks } from "../assets/data";
+
 import BoardView from "../components/BoardView";
 import Button from "../components/Button";
 import Loading from "../components/Loader";

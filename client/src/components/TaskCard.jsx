@@ -27,7 +27,7 @@ const TaskCard = ({ task }) => {
 
   return (
     <>
-      <div className="w-full h-fit bg-white shadow-md p-4 rounded">
+      <div className="w-full h-[300px] bg-white shadow-md p-4 rounded flex flex-col justify-between">
         <div className="w-full flex justify-between">
           <div
             className={clsx(
@@ -49,9 +49,12 @@ const TaskCard = ({ task }) => {
             />
             <h4 className="line-clamp-1 text-black">{task?.title}</h4>
           </div>
-          <span className="text-sm text-gray-600">
-            {formatDate(new Date(task?.date))}
-          </span>
+          <div className="flex justify-start gap-3 items-center text-amber-700">
+            <p className="text-sm ">Deadline:</p>
+            <span className="text-sm text-amber-600">
+              {formatDate(new Date(task?.date))}
+            </span>
+          </div>
         </>
 
         <div className="w-full border-t border-gray-200 my-2" />
@@ -93,11 +96,11 @@ const TaskCard = ({ task }) => {
               {task?.subTasks[0].title}
             </h5>
 
-            <div className="p-4 space-x-8">
+            <div className="flex items-center justify-between">
               <span className="text-sm text-gray-600">
                 {formatDate(new Date(task?.subTasks[0]?.date))}
               </span>
-              <span className="bg-blue-600/10 px-3 py-1 rounded0full text-blue-700 font-medium">
+              <span className="bg-blue-600/10 px-3 py-1 rounded-full text-blue-700 font-medium">
                 {task?.subTasks[0].tag}
               </span>
             </div>
@@ -114,7 +117,7 @@ const TaskCard = ({ task }) => {
           <button
             onClick={() => setOpen(true)}
             disabled={user.isAdmin ? false : true}
-            className="w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300"
+            className="w-full flex gap-2 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300"
           >
             <IoMdAdd className="text-lg" />
             <span>ADD SUBTASK</span>
