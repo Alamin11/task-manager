@@ -11,7 +11,7 @@ import Loading from "../components/Loader";
 
 const Login = () => {
   const { user } = useSelector((state) => state.auth);
-  // console.log(user);
+  console.log(user);
 
   const {
     register,
@@ -30,7 +30,7 @@ const Login = () => {
       dispatch(setCredentials(result));
       navigate("/");
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       toast.error(error?.data?.message || error.message);
     }
   };
