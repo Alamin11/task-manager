@@ -101,11 +101,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
           {/* completed */}
-          <Route path="/:status" element={<Tasks />} />
+          <Route path="/completed/:status" element={<Tasks />} />
           {/* in-progress */}
           <Route path="/in-progress/:status" element={<Tasks />} />
           {/* to-do */}
-          <Route path="/:status" element={<Tasks />} />
+          <Route path="/todo/:status" element={<Tasks />} />
           {/* team */}
           <Route path="/team" element={<Users />} />
           <Route path="/trashed" element={<Trash />} />
