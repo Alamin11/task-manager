@@ -9,8 +9,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        //target: "https://airspacetm.onrender.com",
-        target: "http://localhost:8800",
+
+        target: "https://task-manager-beta-silk.vercel.app/",
+//         target: "http://localhost:8800",
 
         changeOrigin: true,
       },
