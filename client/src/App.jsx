@@ -100,9 +100,13 @@ function App() {
           <Route index path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
-          <Route path="/completed/:status" element={<Tasks />} />
+          {/* completed */}
+          <Route path="/:status" element={<Tasks />} />
+          {/* in-progress */}
           <Route path="/in-progress/:status" element={<Tasks />} />
-          <Route path="/todo/:status" element={<Tasks />} />
+          {/* to-do */}
+          <Route path="/:status" element={<Tasks />} />
+          {/* team */}
           <Route path="/team" element={<Users />} />
           <Route path="/trashed" element={<Trash />} />
           <Route path="/task/:id" element={<TaskDetails />} />

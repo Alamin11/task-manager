@@ -10,6 +10,8 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://airspacetm.onrender.com",
+        // target: "http://localhost:8800",
+
         changeOrigin: true,
       },
     },

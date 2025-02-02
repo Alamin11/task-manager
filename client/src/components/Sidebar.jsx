@@ -25,7 +25,7 @@ const linkData = [
   },
   {
     label: "Completed",
-    link: "completed/completed",
+    link: "completed",
     icon: <MdTaskAlt />,
   },
   {
@@ -35,7 +35,7 @@ const linkData = [
   },
   {
     label: "To Do",
-    link: "todo/todo",
+    link: "todo",
     icon: <MdOutlinePendingActions />,
   },
   {
