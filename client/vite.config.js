@@ -10,8 +10,8 @@ export default defineConfig({
     proxy: {
       "/api": {
 
-        target: "https://task-manager-beta-silk.vercel.app/",
-//         target: "http://localhost:8800",
+        //target: "https://task-manager-beta-silk.vercel.app/",
+        target: "http://localhost:8800",
 
         changeOrigin: true,
       },
