@@ -4,7 +4,7 @@ import User from "../models/user.js";
 const protectRoute = async (req, res, next) => {
   try {
     let token = req.cookies.token;
-
+    // console.log(token);
     if (token) {
       // console.log("check");
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
