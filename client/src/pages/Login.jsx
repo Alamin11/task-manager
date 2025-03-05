@@ -41,7 +41,7 @@ const Login = () => {
     // if (user) navigate("/dashboard");
     // else navigate("/login");
     user && navigate("/dashboard");
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6]">
