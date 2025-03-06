@@ -21,8 +21,8 @@ body {
 
 .circle {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: rgba(203, 37, 156, 0.671);
   box-shadow: 4px -40px 60px 5px rgb(40, 37, 203) inset;
