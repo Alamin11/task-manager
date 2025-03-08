@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
 import moment from "moment";
-import React from "react";
+// import React from "react";
 import { FaNewspaper } from "react-icons/fa";
 import { FaArrowsToDot } from "react-icons/fa6";
 import { LiaClipboardListSolid } from "react-icons/lia";
 import {
   MdAdminPanelSettings,
-  MdKeyboardArrowDown,
   MdKeyboardArrowUp,
   MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
@@ -21,16 +21,16 @@ const TaskTable = ({ tasks }) => {
   const ICONS = {
     high: <MdKeyboardDoubleArrowUp />,
     medium: <MdKeyboardArrowUp />,
-    low: <MdKeyboardArrowDown />,
+    normal: <MdKeyboardArrowUp />,
   };
 
   const TableHeader = () => (
     <thead className="border-b border-gray-300 ">
       <tr className="text-black text-left">
-        <th className="py-2">Task Title</th>
-        <th className="py-2">Priority</th>
-        <th className="py-2">Team</th>
-        <th className="py-2 hidden md:block">Created at</th>
+        <th className="py-2 pr-1">Task Title</th>
+        <th className="py-2 pr-1 text-center">Priority</th>
+        <th className="py-2 pr-1">Team</th>
+        <th className="py-2 pr-1 hidden md:block">Created at</th>
       </tr>
     </thead>
   );
@@ -38,31 +38,35 @@ const TaskTable = ({ tasks }) => {
   const TableRow = ({ task }) => (
     <tr className="border-b border-gray-300 text-gray-600 hover:bg-gray-300/10">
       <td className="py-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ">
           <div
-            className={clsx("w-4 h-4 rounded-full", TASK_TYPE[task.stage])}
+            className={clsx("w-3 h-3 rounded-full", TASK_TYPE[task.stage])}
           />
-
-          <p className="text-base text-black">{task.title}</p>
+          <p className="text-sm md:text-base text-black">{task.title}</p>
         </div>
       </td>
 
-      <td className="py-2">
-        <div className="flex gap-1 items-center">
-          <span className={clsx("text-lg", PRIOTITYSTYELS[task.priority])}>
+      <td className="py-2 px-1">
+        <div className="flex items-center">
+          <span
+            className={clsx(
+              "text-sm md:text-lg",
+              PRIOTITYSTYELS[task.priority]
+            )}
+          >
             {ICONS[task.priority]}
           </span>
           <span className="capitalize">{task.priority}</span>
         </div>
       </td>
 
-      <td className="p-2">
+      <td className="py-2">
         <div className="flex">
           {task.team.map((m, index) => (
             <div
               key={index}
               className={clsx(
-                "w-7 h-7 rounded-full text-white flex items-center justify-center text-sm -mr-1",
+                " w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full text-white flex items-center justify-center text-xs md:text-sm -mr-1",
                 BGS[index % BGS.length]
               )}
             >
@@ -99,7 +103,7 @@ const UserTable = ({ users }) => {
     <thead className="border-b border-gray-300 ">
       <tr className="text-black  text-left">
         <th className="py-2">Full Name</th>
-        <th className="py-2">Status</th>
+        <th className="py-2 px-2">Status</th>
         <th className="py-2 lg:hidden">Joined</th>
       </tr>
     </thead>
