@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   MdAttachFile,
   MdKeyboardArrowDown,

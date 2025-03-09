@@ -1,9 +1,10 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// import React from "react";
 import {
   MdDashboard,
   MdOutlineAddTask,
   MdOutlinePendingActions,
-  MdSettings,
+  // MdSettings,
   MdTaskAlt,
 } from "react-icons/md";
 import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
@@ -80,7 +81,7 @@ const Sidebar = () => {
     );
   };
   return (
-    <div className="w-full  h-full flex flex-col gap-6 p-5">
+    <div className="w-full  h-full flex flex-col gap-5 py-10 px-3">
       <h1 className="flex gap-1 items-center">
         <p className="bg-blue-600 p-2 rounded-full">
           <MdOutlineAddTask className="text-white text-2xl font-black" />
@@ -94,12 +95,12 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="">
+      {/* <div className="">
         <button className="w-full flex gap-2 p-2 items-center text-lg text-gray-800">
           <MdSettings />
           <span>Settings</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

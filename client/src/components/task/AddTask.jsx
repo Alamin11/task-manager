@@ -1,5 +1,6 @@
-import { Dialog, DialogTitle } from "@headlessui/react";
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { DialogTitle } from "@headlessui/react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BiImages } from "react-icons/bi";
 import Button from "../Button";
@@ -49,8 +50,8 @@ const AddTask = ({ open, setOpen, task }) => {
   const [assets, setAssets] = useState([]);
   const [uploading, setUploading] = useState(false);
 
-  const [createTask, { isLoading }] = useCreateTaskMutation();
-  const [updateTask, { isLoading: isUpdating }] = useUpdateTaskMutation();
+  const [createTask] = useCreateTaskMutation();
+  const [updateTask] = useUpdateTaskMutation();
   const URLS = task?.assets ? [...task.assets] : [];
 
   const submitHandler = async (data) => {
@@ -103,7 +104,7 @@ const AddTask = ({ open, setOpen, task }) => {
     return new Promise((resolve, reject) => {
       uploadTask.on(
         "state_changed",
-        (snapshot) => {
+        () => {
           console.log("Uploading");
         },
         (error) => {

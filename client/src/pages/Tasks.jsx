@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import { MdGridView } from "react-icons/md";
@@ -52,18 +52,18 @@ const Tasks = () => {
             onClick={() => setOpen(true)}
             label="Create Task"
             icon={<IoMdAdd className="text-lg" />}
-            className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white"
+            className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white rounded-lg"
           />
         )}
       </div>
       <div>
         <Tabs tabs={TABS} setSelected={setSelected}>
           {!status && (
-            <div className="w-full flex justify-between gap-4 md:gap-x-12 py-4">
+            <div className="w-full flex justify-between gap-2 md:gap-x-12 py-4 ">
               <TaskTitle label="To Do" className={TASK_TYPE.todo} />
               <TaskTitle
                 label="In Progress"
-                className={TASK_TYPE["in progress"]}
+                className={TASK_TYPE["in-progress"]}
               />
               <TaskTitle label="completed" className={TASK_TYPE.completed} />
             </div>
