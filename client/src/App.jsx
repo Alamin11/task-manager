@@ -62,7 +62,7 @@ const MobileSidebar = () => {
         leaveFrom="opacity-x-100"
         leaveTo="opacity-x-0"
       >
-        {(ref) => (
+        {() => (
           <div
             ref={(node) => (mobileMenuRef.current = node)}
             className={clsx(

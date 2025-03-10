@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   MdDelete,
   MdKeyboardArrowDown,
@@ -7,11 +8,11 @@ import {
   MdKeyboardDoubleArrowUp,
   MdOutlineRestore,
 } from "react-icons/md";
-import { tasks } from "../assets/data";
+// import { tasks } from "../assets/data";
 import Title from "../components/Title";
 import Button from "../components/Button";
 import { PRIOTITYSTYELS, TASK_TYPE } from "../utils";
-import AddUser from "../components/AddUser";
+// import AddUser from "../components/AddUser";
 import ConfirmatioDialog from "../components/Dialogs";
 import {
   useDeleteRestoreTaskMutation,
@@ -19,6 +20,7 @@ import {
 } from "../redux/slices/api/taskApiSlice";
 import Loading from "../components/Loader";
 import { toast } from "sonner";
+import AddUser from "../components/AddUser";
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,
@@ -200,7 +202,7 @@ const Trash = () => {
         </div>
       </div>
 
-      {/* <AddUser open={open} setOpen={setOpen} /> */}
+      <AddUser open={open} setOpen={setOpen} />
 
       <ConfirmatioDialog
         open={openDialog}

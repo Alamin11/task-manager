@@ -28,7 +28,7 @@ const TaskCard = ({ task }) => {
 
   return (
     <>
-      <div className="w-full h-[300px] bg-white shadow-md p-4 rounded flex flex-col justify-between">
+      <div className="w-full h-[320px] md:h-[300px] bg-white shadow-md p-4 rounded flex flex-col justify-between">
         <div className="w-full flex justify-between">
           <div
             className={clsx(
@@ -36,7 +36,9 @@ const TaskCard = ({ task }) => {
               PRIOTITYSTYELS[task?.priority]
             )}
           >
-            <span className="text-lg">{ICONS[task?.priority]}</span>
+            <span className="text-base md:text-lg">
+              {ICONS[task?.priority]}
+            </span>
             <span className="uppercase">{task?.priority}</span>
           </div>
           {/* user?.isAdmin && */}
@@ -50,9 +52,9 @@ const TaskCard = ({ task }) => {
             />
             <h4 className="line-clamp-1 text-black">{task?.title}</h4>
           </div>
-          <div className="flex justify-start gap-3 items-center text-amber-700">
+          <div className="flex justify-start gap-3 items-center text-amber-800">
             <p className="text-sm ">Deadline:</p>
-            <span className="text-sm text-amber-600">
+            <span className="text-sm text-amber-700">
               {formatDate(new Date(task?.date))}
             </span>
           </div>

@@ -1,6 +1,7 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// import React from "react";
 import ModalWrapper from "./ModalWrapper";
-import { Dialog, DialogTitle } from "@headlessui/react";
+import { DialogTitle } from "@headlessui/react";
 import Button from "./Button";
 
 const ViewNotification = ({ open, setOpen, el }) => {

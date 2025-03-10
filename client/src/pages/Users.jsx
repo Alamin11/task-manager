@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import Title from "../components/Title";
 import Button from "../components/Button";
 import { IoMdAdd } from "react-icons/io";
@@ -20,7 +21,7 @@ const Users = () => {
   const [openAction, setOpenAction] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  const { data, isLoading, refetch } = useGetTeamListQuery();
+  const { data, refetch } = useGetTeamListQuery();
   const [deleteUser] = useDeleteUserMutation();
   const [userAction] = useUserActionMutation();
   // console.log(data, error);
@@ -87,10 +88,10 @@ const Users = () => {
 
   const TableRow = ({ user }) => (
     <tr className="border-b border-gray-200 text-gray-600 hover:bg-gray-400/10">
-      <td className="p-2">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-blue-700">
-            <span className="text-xs md:text-sm text-center">
+      <td className="pr-2 py-2">
+        <div className="flex items-center gap-2">
+          <div className="w-9 h-9 rounded-full text-white flex items-center justify-center  bg-blue-700">
+            <span className="text-xs text-center p-3">
               {getInitials(user.name)}
             </span>
           </div>
@@ -98,9 +99,9 @@ const Users = () => {
         </div>
       </td>
 
-      <td className="p-2">{user.title}</td>
-      <td className="p-2">{user.email || "user.emal.com"}</td>
-      <td className="p-2">{user.role}</td>
+      <td className="pr-2 py-2">{user.title}</td>
+      <td className="pr-2 py-2">{user.email || "user.emal.com"}</td>
+      <td className="pr-2 py-2">{user.role}</td>
 
       <td>
         <button
@@ -136,10 +137,10 @@ const Users = () => {
     <>
       <div className="w-full md:px-1 px-0 mb-6">
         <div className="flex items-center justify-between mb-8">
-          <Title title="  Team Members" />
+          <Title title="Team Members" />
           <Button
             label="Add New User"
-            icon={<IoMdAdd className="text-lg" />}
+            icon={<IoMdAdd className=" text-sm md:text-lg" />}
             className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white rounded-md 2xl:py-2.5"
             onClick={() => setOpen(true)}
           />

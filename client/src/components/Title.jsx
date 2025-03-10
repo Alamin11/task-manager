@@ -1,9 +1,15 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
-import React from "react";
+// import React from "react";
 
 const Title = ({ title, className }) => {
   return (
-    <h2 className={clsx("text-2xl font-semibold capitalize", className)}>
+    <h2
+      className={clsx(
+        "text-xl md:text-2xl font-semibold capitalize",
+        className
+      )}
+    >
       {title}
     </h2>
   );
